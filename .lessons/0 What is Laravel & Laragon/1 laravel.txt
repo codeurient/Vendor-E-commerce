@@ -1,0 +1,41 @@
+🧱 Laravel nədir?
+
+Laravel — PHP ilə yazılmış açıq mənbəli (open-source) veb proqramlaşdırma framework'udur. Əsas məqsədi, 
+web tətbiqlərinin inkişafını asanlaşdırmaq və mükəmməl strukturlaşdırılmış kod yazmağı təmin etməkdir.
+
+Laravel aşağıdakı xüsusiyyətlərlə tanınır:
+
+- MVC (Model-View-Controller) arxitekturası
+- Routing (marşrutlaşdırma)
+- ORM (Eloquent) – Database ilə işləmək üçün
+- Middleware və Request handling
+- Authentication və Authorization sistemləri
+- Migrations və Seeder'lar
+- Blade templating engine
+
+Nəticə: Laravel bir framework'dür – yəni sən onunla veb tətbiqlər yaradırsan.
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------
+
+
+🖥️ Laragon nədir?
+
+Laragon — Windows sistemlər üçün hazırlanmış, lokal veb server mühitidir (local development environment). Xüsusilə Laravel 
+və digər PHP framework’ləri ilə işləmək üçün çox rahatdır. Apache/Nginx, MySQL, PHP, Node.js və s. tərkibində olur.
+
+Laragon:
+
+- Apache/Nginx + PHP + MySQL/MariaDB + phpMyAdmin kimi alətləri bir yerdə təqdim edir
+- Laravel, Symfony, WordPress, və s. üçün “quick install” imkanı verir
+- Virtual host'ları avtomatik yarada bilir (e.g. myapp.test)
+- CMD və ya Git Bash ilə rahat işləyir
+- Performance olaraq WAMP/XAMPP-dan daha sürətlidir
+
+Nəticə: Laragon bir mühitdir (environment) – sən onunla Laravel kimi framework'ləri quraşdırır və işə salırsan.
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------
+
