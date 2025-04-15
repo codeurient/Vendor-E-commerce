@@ -4,13 +4,21 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/about', function(){
-    return "<h1>Customer create</h1>";
+Route::get('/', function(){
+    return view('welcome');
 }); 
 
+
+Route::get('/about', function(){
+    return view('about.index');
+})->name('about.page'); 
+
+
+
 Route::get('/contact', function(){
-    return "<h1>Customer show</h1>";
-}); 
+    return view('contact', ['text' => 'Contact page']);
+})->name('contact.page'); 
+
 
 
 Route::fallback(function(){

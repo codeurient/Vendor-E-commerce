@@ -9,8 +9,8 @@
 <body>
 
 
-    <a href="{{ route('about.page') }}"> About page </a>
-    <a href="{{ route('contact.page') }}"> Contact page </a>
+    {{ $text }}
+
     
 </body>
 </html>
