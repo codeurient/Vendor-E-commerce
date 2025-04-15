@@ -3,24 +3,12 @@
 use Illuminate\Support\Facades\Route;
 
 
-
 Route::get('/', function(){
-    return view('welcome');
-}); 
+    return view('home');
+})->name('home'); 
 
 
 Route::get('/about', function(){
-    return view('about.index');
-})->name('about.page'); 
+    return view('about');
+})->name('about'); 
 
-
-
-Route::get('/contact', function(){
-    return view('contact', ['text' => 'Contact page']);
-})->name('contact.page'); 
-
-
-
-Route::fallback(function(){
-    return "Route Not Exists";
-});
