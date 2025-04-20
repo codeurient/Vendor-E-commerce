@@ -13,8 +13,9 @@ class LoginController extends Controller
     public function handleLogin(Request $request) {
 
         $request->validate([
-            'name' => 'required',
-            'email' => 'required',
+            'name' => ['required', 'alpha', 'min:6', 'max:10'],
+            // 'name' => 'required|alpha',
+            'email' => ['required', 'email'],
             'password' => 'required'
         ]);
         
