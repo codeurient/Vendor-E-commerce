@@ -12,7 +12,7 @@ class LoginController extends Controller
 
     public function handleLogin(Request $request) {
         
-        dd($request->all());
+        return $request;
 
     }
 }
