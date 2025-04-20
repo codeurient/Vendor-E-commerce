@@ -8,18 +8,23 @@
 
             <div class="card">
                 <div class="card-body">
-                    <form action="">
+                    {{-- 1) action="{{ route('login.submit') }}" method="POST"  --}}
+                    <form action="{{ route('login.submit') }}" method="POST">
+                        @csrf
                         <div class="mb-2">
                             <label for="" class="form-label">User Name</label>
-                            <input type="text" class="form-control">
+                            {{-- 2) name="name" --}}
+                            <input name="name" type="text" class="form-control">
                         </div>
                         <div class="mb-2">
                             <label for="" class="form-label">User Email</label>
-                            <input type="text" class="form-control">
+                            {{-- 3) name="email" --}}
+                            <input name="email" type="text" class="form-control">
                         </div>
                         <div class="mb-2">
                             <label for="" class="form-label">User Password</label>
-                            <input type="text" class="form-control">
+                            {{-- 4) name="password" --}}
+                            <input name="password" type="text" class="form-control">
                         </div>
 
                         <button type="submit" class="btn btn-primary">Submit</button>
