@@ -5,3 +5,23 @@
 
 
 
+✅ 2) Bu əmrdən sonra php artisan migrate işlətmək lazımdırmı?
+Bəli, mütləq!
+
+🔔 make:migration əmri sadəcə faylı yaradır. Heç bir dəyişiklik hələlik verilənlər bazasına tətbiq olunmur.
+
+Dəyişiklikləri tətbiq etmək üçün: php artisan migrate  yazmaq lazımdır.
+
+Bu zaman yaratdığınız yeni migration fayl icra olunur və posts cədvəlinə dəyişiklik əlavə edilir.
+
+
+
+
+BONUS: Niyə add_..._to_..._table deyil, add_posts_table yazılıb?
+Laravel adətən aşağıdakı formatı avtomatik başa düşür:
+
+add_<fields>_to_<table>_table
+
+Məsələn: php artisan make:migration add_title_to_posts_table --table=posts
+
+Bu halda, fayl adı daha aydın olur və title sütununun posts cədvəlinə əlavə olunacağı aydın şəkildə görünür.
