@@ -10,7 +10,7 @@ class HomeController extends Controller
 
     public function __invoke(Request $request)
     {
-        return DB::table('posts')->where('id', 1)->value('title');
+        return DB::table('posts')->where('status',  1)->get();
 
         // return view('home', compact('blogs'));
     }
