@@ -9,21 +9,12 @@ class HomeController extends Controller
 {
     public function __invoke(Request $request)
     {
-        DB::table('posts')->insert([
-           [
-            'title' => 'This is a test Data',
+        DB::table('posts')->where('id', 17)->update([
+            'title' => 'This is a UPDATED test Data 1',
             'description' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum, ipsa.',
-            'status' => 1,
+            'status' => 0,
             'publish_date' => date('Y-m-d'),
             'user_id' => 1
-           ],
-           [
-            'title' => 'This is a test Data',
-            'description' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum, ipsa.',
-            'status' => 1,
-            'publish_date' => date('Y-m-d'),
-            'user_id' => 1
-           ],
         ]);
 
         dd('success');
