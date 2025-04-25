@@ -10,17 +10,29 @@ class HomeController extends Controller
 {
     public function __invoke(Request $request)
     {
-        $post = Post::where('id', '2')->get();
-        $post->title = 'post 5 updated';
-        $post->save();
+
+        // $post = Post::create([
+        //     'title' => 'this is from mass assign',
+        //     'description' => 'this is a description from mass assign',
+        //     'status' => 1,
+        //     'publish_date' => date('Y-m-d'),
+        //     'user_id' => 1,
+        //     'category_id' => 2,
+        //     'views' => 500,
+        // ]);
+
+
+
+        // $post = Post::find(3)->update([
+        //     'title' => 'this is from UPDATED mass assign',
+        // ]);
+
+
+        $post = Post::where('status', 1)->update([
+            'status' => 0,
+        ]);
+
         dd('success');
-
-
-
-        // $post = Post::find(2);
-        // $post->title = 'post 2 updated';
-        // $post->save();
-        // dd('success');
 
     }
 }
