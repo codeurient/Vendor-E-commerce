@@ -12,10 +12,8 @@ class HomeController extends Controller
 {
     public function __invoke(Request $request)
     {
-        $category = Category::with('posts.category')->find(1);
+        
 
-        $posts = $category->posts;
-
-        return view('home', compact('posts'));
+        // return view('home', compact('posts'));
     }
 }
