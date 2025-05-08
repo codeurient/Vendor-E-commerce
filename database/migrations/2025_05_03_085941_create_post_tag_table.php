@@ -17,6 +17,10 @@ return new class extends Migration
             $table->foreignId('post_id')->constrained()->onDelete('cascade');
             $table->foreignId('tag_id')->constrained()->onDelete('cascade');
 
+
+            $table->string('status');
+            $table->date('assigned_at');
+
             // Optional: birlikdə unikal etməklə təkrarı önləmək
             $table->unique(['post_id', 'tag_id']);
             
