@@ -23,10 +23,7 @@
 
       function getQueryParam(name) {
         const urlParams = new URLSearchParams(window.location.search);
-        return parseInt(urlParams.get(name)) || 1;
-
-        return console.log(parseInt(urlParams.get(name)));
-        
+        return parseInt(urlParams.get(name)) || 1;      
       }
       let page = getQueryParam('page')  ;
 

@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Models\Post;
@@ -10,10 +11,10 @@ class HomeController extends Controller
     {
         $posts = Post::with('tags')->paginate(10);
 
-        if ($request->ajax()) {
+        if($request->ajax()) {
             return view('partials.posts', compact('posts'))->render();
         }
         
         return view('home', compact('posts'));
-    }
+    }   
 }
