@@ -7,9 +7,13 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AddressController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LoginController;
 
 Route::get('/',             HomeController::class)->name('home'); 
+
+
+Route::post('/upload-file', [ImageController::class, 'handleImage'])->name('upload-file'); 
 
 
 Route::get('/login',        [LoginController::class, 'index'])->name('login'); 

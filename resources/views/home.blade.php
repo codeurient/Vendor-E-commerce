@@ -1,46 +1,34 @@
 @extends('layouts.master')
 
 @section('content')
+
   <main role="main" class="container">
+    <div class="col-md-4 mt-5">
+      <div class="card">
+        <div class="card-body">
 
-    <div class="row mt-5" id="post-container">
-      @include('partials.posts') <!-- ilk 10 post -->
-    </div>   
-    
-    @if ($posts->hasMorePages())
-      <div class="text-center mt-4">
-        <button class="btn btn-primary" id="load-more">Daha çox yüklə</button>
+          <form action="{{ route('upload-file') }}" method="POST" enctype="multipart/form-data">
+            
+            @csrf
+
+            <div class="form-group">
+              <label for="" class="mb-2">Upload</label>
+              <input type="file" name="image" class="form-control">
+            </div>
+
+            <div class="form-group">
+              <button type="submit" class="btn btn-success mt-2">Submit</button>
+            </div>
+
+          </form>
+
+          <img src="" alt="">
+          
+          <img class="mt-3" width="200" height="200" src="{{ asset('storage\images\my_own_image_name.jpg') }}">
+
+        </div>
       </div>
-    @endif
-
+    </div>
   </main>
-@endsection
 
-@section('scripts')
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  
-  <script>
-
-      function getQueryParam(name) {
-        const urlParams = new URLSearchParams(window.location.search);
-        return parseInt(urlParams.get(name)) || 1;      
-      }
-      let page = getQueryParam('page')  ;
-
-      $('#load-more').on('click', function () {
-          page++;
-          $.ajax({
-              url: "?page=" + page,
-              type: 'GET',
-              success: function (data) {                
-                  if (data.trim() == '') {
-                      $('#load-more').hide();
-                  } else {
-                      $('#post-container').append(data);
-                  }
-              }
-          });
-      });
-
-  </script>
 @endsection
