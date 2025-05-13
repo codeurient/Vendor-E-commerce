@@ -3,7 +3,16 @@
 @section('content')
 
   <main role="main" class="container">
+
+
     <div class="col-md-4 mt-5">
+
+      @if($errors->any())
+        @foreach ($errors->all() as $error)
+          <div class="alert alert-danger mt-3">{{ $error }}</div>
+        @endforeach
+      @endif
+
       <div class="card">
         <div class="card-body">
 
