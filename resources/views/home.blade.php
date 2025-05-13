@@ -4,7 +4,6 @@
 
   <main role="main" class="container">
 
-
     <div class="col-md-4 mt-5">
 
       @if($errors->any())
@@ -38,6 +37,9 @@
         </div>
       </div>
     </div>
+
+    <a class="btn btn-primary mt-3" href="{{ route('download') }}">Download Image</a>
+
   </main>
 
 @endsection

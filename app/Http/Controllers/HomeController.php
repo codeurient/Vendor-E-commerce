@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 
 class HomeController extends Controller
@@ -14,6 +15,5 @@ class HomeController extends Controller
     {
 
         return view('home');
-
     }   
 }
