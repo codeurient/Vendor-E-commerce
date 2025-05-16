@@ -5,13 +5,10 @@
         <div class="card">
             <div class="card-header mb-4">
                 <div class="row">
-                    <div class="col-md-6">
-                        <h4>All Posts</h4>
-                    </div>
+                    <div class="col-md-6">   <h4>All Posts</h4>    </div>
 
                     <div class="col-md-6 d-flex justify-content-end">
-                        <a class="btn btn-success mx-1" href="{{ route('posts.create') }}">Create <i class="fa-solid fa-plus"></i></a>
-                        <a class="btn btn-warning mx-1" href="">Trashed <i class="fa-solid fa-trash"></i></a>
+                        <a class="btn btn-success mx-1" href="">Back</a>
                     </div>
                 </div>
             </div>
@@ -39,7 +36,7 @@
                             <td>02.05.2025</td>
                             <td>
                                 <a class="btn-sm btn btn-success" href="">Show</a>
-                                <a class="btn-sm btn btn-primary" href="">Edit</a>
+                                <a class="btn-sm btn btn-primary" href="{{ route('') }}">Edit</a>
                                 <a class="btn-sm btn btn-danger" href="">Delete</a>
                             </td>
                         </tr>
@@ -49,4 +46,3 @@
         </div>
     </div>
 @endsection
-

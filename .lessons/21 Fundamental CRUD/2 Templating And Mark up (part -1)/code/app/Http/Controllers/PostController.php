@@ -10,9 +10,7 @@ class PostController extends Controller
         return view('index');
     }                                  
 
-    public function create(){
-        return view('create');
-    }                                  
+    public function create(){}                                  
 
     public function store(Request $request){}                   
 
