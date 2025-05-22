@@ -6,14 +6,12 @@
             <div class="card-header mb-4">
                 <div class="row">
                     <div class="col-md-6">
-                        <h4>All Posts</h4>
+                        <h4>Trashed Posts</h4>
                     </div>
 
                     <div class="col-md-6 d-flex justify-content-end">
                         <a class="btn btn-success mx-1" href="{{ route('posts.create') }}">Create <i class="fa-solid fa-plus"></i></a>
-
-                        <a class="btn btn-warning mx-1" href="{{ route('posts.trashed') }}">Trashed <i class="fa-solid fa-trash"></i></a>
-
+                        <a class="btn btn-warning mx-1" href="">Trashed <i class="fa-solid fa-trash"></i></a>
                     </div>
                 </div>
             </div>
@@ -31,8 +29,8 @@
                             <th scope="col" style="width: 20%">Action</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        @foreach ($posts as $post)
+                    @foreach ($posts as $post)
+                        <tbody>
                             <tr>
                                 <th scope="row">{{ $post->id }}</th>
                                 <td> <img width="70" height="70" src="{{ asset($post->image) }}" alt=""> </td>
@@ -40,28 +38,24 @@
                                 <td>{{ $post->description }}</td>
 
                                 <td>{{ $post->category->name }}</td>
-
+                                
                                 <td>{{ date('d-m-Y', strtotime($post->created_at)) }}</td>
                                 
                                 <td>
-                                    <a class="btn-sm btn btn-success" href="{{ route('posts.show', $post->id)  }}">Show</a>
+                                    <div class="d-flex">
+                                        <a class="btn-sm btn btn-success me-2" href="{{ route('posts.restore', $post->id)  }}">Restore</a>
 
-                                    <a class="btn-sm btn btn-primary" href="{{ route('posts.edit', $post->id) }}">Edit</a>
-                                    {{-- <a class="btn-sm btn btn-danger" href="">Delete</a> --}}
-
-                                    <form action="{{ route('posts.destroy', $post->id) }}" method="POST" class="d-inline">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="btn-sm btn btn-danger">Delete</button>
-                                    </form>
+                                        <form action="{{ route('posts.force_delete', $post->id) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn-sm btn btn-danger">Delete</button>
+                                        </form>
+                                    </div>
                                 </td>
                             </tr>
-                        @endforeach
-                    </tbody>
+                        </tbody>
+                    @endforeach
                 </table>
-
-                {{ $posts->links() }}
-
             </div>
         </div>
     </div>
