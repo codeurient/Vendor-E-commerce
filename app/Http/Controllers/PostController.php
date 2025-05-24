@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\File;
 
 class PostController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('authCheck2')->except('index');
+    }
+
     public function index() {
         $posts = Post::with('category')->paginate(4);
         return view('index', compact('posts'));
