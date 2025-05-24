@@ -33,7 +33,9 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
 
-        // 'authCheck' => [  \App\Http\Middleware\AuthCheck::class, ]
+        'authCheck' => [
+            \App\Http\Middleware\AuthCheck::class,
+        ]
     ];
 
     protected $middlewareAliases = [
@@ -47,8 +49,5 @@ class Kernel extends HttpKernel
         'signed' => \App\Http\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-
-        'authCheck2' => \App\Http\Middleware\AuthCheck::class, 
-
     ];
 }

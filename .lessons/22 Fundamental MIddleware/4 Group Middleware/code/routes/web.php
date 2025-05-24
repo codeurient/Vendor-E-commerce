@@ -3,11 +3,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 
 
-Route::group(['middleware' => 'authCheck2'], function() {
+Route::group(['middleware' => 'authCheck'], function() {
 
     Route::get('/dashboard', function() {
         return view('dashboard');
     })->name('dashboard');
+
 
     Route::get('/profile', function() {
         return view('profile');
@@ -34,6 +35,4 @@ Route::get('/posts/{id}/restore',           [PostController::class, 'restore'])-
 
 Route::delete('/posts/{id}/force-delete',   [PostController::class, 'forceDelete'])->name('posts.force_delete');
 
-
-
-Route::resource('posts', PostController::class)->middleware('authCheck2');
+Route::resource('posts', PostController::class);
