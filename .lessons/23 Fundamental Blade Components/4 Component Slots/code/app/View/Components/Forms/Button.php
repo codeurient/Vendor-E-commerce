@@ -1,23 +1,20 @@
 <?php
-
-namespace App\View\Components\Post;
+namespace App\View\Components\Forms;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Index extends Component
+class Button extends Component
 {
-    // public $post;
 
     public function __construct()
     {
-    //    $this->post = $post;
+        //
     }
-
 
     public function render(): View|Closure|string
     {
-        return view('components.post.index');
+        return view('components.forms.submit');
     }
 }
