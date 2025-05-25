@@ -3,8 +3,6 @@
 
 @section('content')
 
-    <h1>This is a Profile!</h1>
-
-    <p>{{ $site_name }}</p>
+    <h1>You don't have the permission to access!</h1>
     
 @endsection

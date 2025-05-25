@@ -3,8 +3,6 @@
 
 @section('content')
 
-    <h1>This is a Profile!</h1>
-
-    <p>{{ $site_name }}</p>
+    <h1>This is a Welcome!</h1>
     
 @endsection
