@@ -1,7 +1,11 @@
 <?php
+use App\Models\Post;
+
+use Illuminate\Support\Facades\Mail;
+use App\Mail\OrderShipped;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
-use App\Models\Post;
 
 Route::group(['middleware' => 'authCheck2'], function() {
 
@@ -31,8 +35,18 @@ Route::delete('/posts/{id}/force-delete',   [PostController::class, 'forceDelete
 Route::resource('posts', PostController::class);
 
 
-
 Route::get('contact', function() {
     $posts = Post::all();
     return view('contact', compact('posts'));
+});
+
+
+Route::get('send-mail', function() {
+    // Mail::raw('This is a test mail', function($message) {
+    //     $message->to('test@example.com')->subject('Hello');
+    // });
+
+    Mail::send(new OrderShipped);
+
+    return 'Email sent';
 });
