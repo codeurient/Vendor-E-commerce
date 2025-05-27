@@ -3,8 +3,11 @@ use App\Models\Post;
 
 use App\Mail\OrderShipped;
 use Illuminate\Support\Facades\Mail;
+
 use Illuminate\Support\Facades\Route;
+
 use Illuminate\Http\Request;
+
 use App\Http\Controllers\PostController;
 
 Route::group(['middleware' => 'authCheck2'], function() {
@@ -48,25 +51,13 @@ Route::get('send-mail', function() {
     return 'Email sent';
 });
 
+
 Route::get('get-session', function(Request $request) {
     // $data = session()->all();
-    $data = $request->session()->all();
-    // $data = $request->session()->get('_token');
+    // $data = $request->session()->all();
+
+    $data = $request->session()->get('_token');
+
     dd($data);
-});
-
-Route::get('save-session', function(Request $request) {
-
-    // $request->session()->put('user_id', 35);
-
-    // $request->session()->put([
-    //     'user_status' => 'logged_in',
-    //     'user_role' => 'moderator'
-    // ]);
-
-    session(['user_ip' => '123.23.11']);
-
-    return redirect('get-session');
-
 });
 
