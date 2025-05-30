@@ -1,0 +1,2 @@
+**Qeyd:** `Breeze Starter Kit` proqramının quraşdırılması bəzi mövcud faylların üzərinə yazılacaq. Əgər əvvəlki kodunuzu itirmək istəmirsinizsə, 
+ya yeni Laravel layihəsi yaradın, ya da davam etməzdən əvvəl cari layihənizin ehtiyat nüsxəsini çıxarın.
