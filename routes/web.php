@@ -1,12 +1,9 @@
 <?php
-
 use App\Models\Post;
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
-
-
 
 Route::get('/', function () {
     return view('welcome');
@@ -28,13 +25,18 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 
-
 Route::get('/unavailable', function() {
     return view('unavailable');
 })->name('unavailable');
-
 
 Route::get('/posts/trash',                  [PostController::class, 'trashed'])->name('posts.trashed');
 Route::get('/posts/{id}/restore',           [PostController::class, 'restore'])->name('posts.restore');
 Route::delete('/posts/{id}/force-delete',   [PostController::class, 'forceDelete'])->name('posts.force_delete');
 Route::resource('posts', PostController::class);
+
+Route::get('/user-data', function() {
+    return Auth::user();
+    // return auth()->user();
+    // return Auth::user()->name;
+    // return auth()->user()->email;
+});
