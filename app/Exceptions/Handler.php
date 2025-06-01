@@ -45,4 +45,16 @@ class Handler extends ExceptionHandler
             //
         });
     }
+    
+
+
+    public function render($request, Throwable $exception)
+    {
+        if ($exception instanceof \Symfony\Component\Routing\Exception\RouteNotFoundException) {
+            \Log::error('Route not found exception: ' . $exception->getMessage());
+        }
+
+        return parent::render($request, $exception);
+    }
+
 }
