@@ -3,6 +3,6 @@
 
 @section('content')
 
-    <h1>This is a Welcome!</h1>
+    <h1>This is a Windows page!</h1>
     
 @endsection

@@ -1,20 +1,20 @@
 <?php
 use App\Models\Post;
 
-use App\Http\Controllers\ProfileController;
+use App\Jobs\SendMail;
+
+use App\Mail\PostPublished;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProfileController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
-
-
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -23,7 +23,6 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
-
 
 Route::get('/unavailable', function() {
     return view('unavailable');
@@ -42,3 +41,11 @@ Route::group(['middleware' => 'auth'], function () {
 //     // return Auth::user()->name;
 //     // return auth()->user()->email;
 // });
+
+Route::get('/send-mail', function() {
+
+    SendMail::dispatch();
+    
+    dd('Mail has been sended');
+
+});
