@@ -1,1 +1,0 @@
-<b> Your order has been shipped </b>
