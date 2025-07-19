@@ -32,15 +32,11 @@
                     <div class="d-flex">
                         <input class="form-control text-center me-3" type="num" value="1" style="max-width: 3rem" >
 
-                        <form action="{{ route('paypal.payment') }}" method="POST">
-                            @csrf
-                            <input type="hidden" value="40" name="price">
+                        <a href="{{ route('twocheckout.payment') }}" type="submit" class="btn btn-outline-dark flex-shrink-0" type="button">
+                            <i class="bi-cart-fill me-1"></i>
+                            Buy Now
+                        </a>
 
-                            <button type="submit" class="btn btn-outline-dark flex-shrink-0" type="button">
-                                <i class="bi-cart-fill me-1"></i>
-                                Buy Now
-                            </button>
-                        </form>
                     </div>
 
                 </div>
