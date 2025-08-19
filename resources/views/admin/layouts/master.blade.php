@@ -101,7 +101,6 @@
               
   <script>
     $(document).ready( function () {
-
       $.ajaxSetup({
         headers: {
           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -122,19 +121,16 @@
           confirmButtonText: "Yes, delete it!"
         }).then((result) => {
           if (result.isConfirmed) {
-
             $.ajax({
               type: 'DELETE',
               url: deleteUrl,
 
               success: function(data) {
-                
                 if(data.status == 'success') {
                   Swal.fire({ 
                     title: "Deleted!",
                     text: data.message
                   });
-
                   window.location.reload();
                 } else if(data.status == 'error') {
                   Swal.fire({ 
@@ -142,13 +138,8 @@
                     text: data.message
                   });
                 }
-
               },
-
-              error: function(xhr, status, error) {
-                console.log(error);
-                
-              }
+              error: function(xhr, status, error) { console.log(error); }
             })
           }
         });

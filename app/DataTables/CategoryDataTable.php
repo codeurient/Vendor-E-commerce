@@ -14,7 +14,7 @@ use Yajra\DataTables\Services\DataTable;
 
 class CategoryDataTable extends DataTable
 {
-
+    
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
