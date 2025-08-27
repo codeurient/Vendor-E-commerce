@@ -29,7 +29,7 @@
 
                                 <div class="form-group">
                                     <label for="inputState">Sub Category</label>
-                                    <select id="inputState" class="form-control sub-category" name="child_category">
+                                    <select id="inputState" class="form-control sub-category" name="sub_category">
                                         <option value="1">Select</option>
                                         
                                     </select>
