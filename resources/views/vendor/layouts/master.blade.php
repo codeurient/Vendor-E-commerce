@@ -20,6 +20,9 @@
   <link rel="stylesheet" href="{{ asset('frontend/css/ranger_style.css') }}">
   <link rel="stylesheet" href="{{ asset('frontend/css/jquery.classycountdown.css') }}">
   <link rel="stylesheet" href="{{ asset('frontend/css/venobox.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('backend/assets/modules/summernote/summernote-bs4.css') }}">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
 
   <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}">
   <link rel="stylesheet" href="{{ asset('frontend/css/responsive.css') }}">
@@ -98,8 +101,21 @@
   <!--classycountdown js-->
   <script src="{{ asset('frontend/js/jquery.classycountdown.js') }}"></script>
 
+  <script src="{{ asset('backend/assets/modules/summernote/summernote-bs4.js') }}"></script>
+
+  <script src="http://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
   <!--main/custom js-->
   <script src="{{ asset('frontend/js/main.js') }}"></script>
+
+  <script>
+    $('.summernote').summernote({
+      height: 150
+    })
+  </script>
+
+  @stack('scripts')
+  
 </body>
 
 </html>
