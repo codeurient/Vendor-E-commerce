@@ -15,6 +15,7 @@
                     <h4>Create Product</h4>
                   </div>
                   <div class="card-body">
+
                     <form action="{{route('admin.products.store')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
@@ -151,6 +152,7 @@
                         <button type="submmit" class="btn btn-primary">Create</button>
                         
                     </form>
+                    
                   </div>
 
                 </div>

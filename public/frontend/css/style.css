@@ -9483,3 +9483,8 @@ a:not([href]):not([class]):hover {
   text-align: right;
   margin-bottom: 10px;
 }
+
+#flexSwitchCheckDefault {
+  height: 20px !important;
+  width: 50px !important;
+}
