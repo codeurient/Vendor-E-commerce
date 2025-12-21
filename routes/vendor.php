@@ -4,6 +4,7 @@ use App\Http\Controllers\Backend\VendorController;
 use App\Http\Controllers\Backend\VendorProductController;
 use App\Http\Controllers\Backend\VendorProfileController;
 use App\Http\Controllers\Backend\VendorShopProfileController;
+use App\Http\Controllers\Backend\VendorProductImageGalleryController;
 
 Route::get('dashboard',  [VendorController::class,        'dashboard'])->name('dashboard');
 Route::get('profile',    [VendorProfileController::class, 'index'])->name('profile');
@@ -19,3 +20,5 @@ Route::get('product/get-child-categories',  [VendorProductController::class, 'ge
 
 Route::resource('products', VendorProductController::class);
 
+/** Products image gallery route */
+Route::resource('products-image-gallery', VendorProductImageGalleryController::class);
