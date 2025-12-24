@@ -38,15 +38,20 @@
                 let id = $(this).data('id');
 
                 $.ajax({
-                    url: "{{route('admin.product.change-status')}}",
+                    url: "{{route('vendor.product.change-status')}}",
                     method: 'PUT',
                     data: {
                         status: isChecked,
                         id: id
                     },
-                    success: function(data)             {  toastr.success(data.message)  },
-                    error: function(xhr, status, error) {  console.log(error);           }
+                    success: function(data){
+                        toastr.success(data.message)
+                    },
+                    error: function(xhr, status, error){
+                        console.log(error);
+                    }
                 })
+
             })
         })
     </script>
