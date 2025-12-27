@@ -6,11 +6,12 @@
                     <div class="wsus__flash_coundown">
                         <span class=" end_text">Flash Sale</span>
                         <div class="simply-countdown simply-countdown-one"></div>
-                        <a class="common_btn" href="">see more <i class="fas fa-caret-right"></i></a>
+                        <a class="common_btn" href="{{ route('flash-sale') }}">see more <i class="fas fa-caret-right"></i></a>
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="row flash_sell_slider">
             @foreach ($flashSaleItems as $item)
                 @php
@@ -70,6 +71,7 @@
                 </div>
             @endforeach
         </div>
+        
     </div>
 </section>
 
