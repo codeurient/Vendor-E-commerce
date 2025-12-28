@@ -6,6 +6,7 @@ use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\FlashSaleController;
 use App\Http\Controllers\Frontend\UserProfileController;
 use App\Http\Controllers\Frontend\UserDashboardController;
+use App\Http\Controllers\Frontend\FrontendProductController;
 
 
 // Route::get('/', function () {
@@ -26,6 +27,7 @@ require __DIR__.'/auth.php';
 
 Route::get('flash-sale', [FlashSaleController::class, 'index'])->name('flash-sale');
 
+Route::get('product-detail/{slug}', [FrontendProductController::class, 'showProduct'])->name('product-detail');
 
 
 Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'user',  'as' => 'user.'  ],    function(){
