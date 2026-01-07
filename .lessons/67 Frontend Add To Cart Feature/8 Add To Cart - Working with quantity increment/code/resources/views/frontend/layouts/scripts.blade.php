@@ -11,7 +11,7 @@
             e.preventDefault();
             let formData = $(this).serialize();
 
-            console.log(formData);
+            // console.log(formData);
 
             $.ajax({
                 method: 'POST',
